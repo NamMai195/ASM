@@ -339,7 +339,7 @@ const loadProducts = (idPosition, lsp, soluong) => {
   productList.innerHTML += `
   <div class="tieude">
   <h2>${danhmuc[lsp - 1].name}</h2>
-  <a href="#">Xem Thêm</a>
+  <a href="loaisp.html?id=${lsp}">Xem Thêm</a>
    </div`;
   for (let i = 0; i < sanpham.length; i++) {
     if (sanpham[i].iddm === lsp) {

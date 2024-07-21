@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi Tiết Sản Phẩm</title>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="chitiet.css">
-  </head>
-  <body>
-    <div class="container">
-      <header>
+</head>
+<body>
+    <header>
         <div>
           <p>
             <img src="./img/logo.png" alt="" class="logo" />
@@ -45,43 +42,58 @@
           <div class="search">
             <input type="text" placeholder="Nhập Tên Sản Phẩm" />
             <button style="height: 30px">search</button>
+            <button style="height: 30px;">TÀI KHOẢN</button>
           </div>
         </div>
       </header>
-      <div class="product-detail">
-        <img id="productImage" src="" alt="" />
-        <div>
-          <br> <br> <br>
-          <h2 id="productName"></h2>
-          <br> <br> <br>
-          <p id="productPrice" class="price"></p> 
-          <br> <br> <br>
-           <button>THÊM VÀO VỎ HÀNG</button> 
-           <button>MUA</button>
-          <br> <br> <br> <br>
-          <p id="productmt"></p>
+      <main>
+        <div id="11">
         </div>
-      </div>
-      <footer>
-        <div class="footer">
-          <a class="links link1">© 2024 </a>
-          <a href="tel:+123456789" class="links link2">SODT</a>
-          <a href="https://www.facebook.com/teennguyendang" class="links link3">FB</a>
-          <a href="mailto:nguyendanghighschool@gmail.com" class="links link4">EMAIL </a>
+        <div id="22">
+         
         </div>
-      </footer>
-    </div>
-    
+        <div id="33">
+         
+        </div>
+        <div id="44">
+         
+        </div>
+        <div id="55">
+         
+        </div>
+        <div id="66">
+         
+        </div>
+        <div id="77">
+         
+        </div>
+        </main>
+        <footer>
+          <div class="footer">
+            <a class="links link1">© 2024 </a>
+            <a href="tel:+123456789" class="links link2">SODT</a>
+            <a href="https://www.facebook.com/teennguyendang" class="links link3">FB</a>
+            <a href="mailto:nguyendanghighschool@gmail.com" class="links link4">EMAIL </a>
+          </div>
+        </footer>
+        <script  >
+            var danhmuc = [
+  { id: 1, name: "Các Loại Cún Cưng" },
+  { id: 2, name: "Các Loại Mèo" },
+  { id: 3, name: "Các Loại Chuột " },
+  { id: 4, name: "Các Loại Thỏ" },
+  { id: 5, name: "Đồ Chơi Cho Thú" },
+  { id: 6, name: "Thức Ăn Cho Thú" },
+  { id: 7, name: "Sản Phẩm và vệ sinh" },
+];
 
-    <script>
-      const sanpham = [
-      {
+const sanpham = [
+  {
     id: 1,
     hinh: ["./img/cho/corgiy.png", "./img/cho/corgiy2.png"],
     name: "CORGIY",
     price: 7000000,
     iddm: 1,
-    description: "Corgi là giống chó có nguồn gốc từ xứ Wales, nổi tiếng với hình dáng dễ thương và thân thiện."
   },
   {
     id: 2,
@@ -89,7 +101,6 @@
     name: "Alaska giant",
     price: 1900000,
     iddm: 1,
-    description: "Alaska giant là giống chó lớn, mạnh mẽ và rất trung thành, thích hợp làm thú cưng và bảo vệ."
   },
   {
     id: 3,
@@ -97,7 +108,6 @@
     name: "GoDen",
     price: 7000000,
     iddm: 1,
-    description: "Golden Retriever là giống chó thông minh, dễ huấn luyện và rất thân thiện với con người."
   },
   {
     id: 4,
@@ -105,7 +115,6 @@
     name: "HUSKY",
     price: 17000000,
     iddm: 1,
-    description: "Husky là giống chó mạnh mẽ, có ngoại hình đẹp và rất năng động, thường được nuôi để làm bạn đồng hành."
   },
   {
     id: 5,
@@ -113,7 +122,6 @@
     name: "INU",
     price: 21000000,
     iddm: 1,
-    description: "Shiba Inu là giống chó nhỏ gọn, lanh lợi và rất trung thành, được yêu thích trên toàn thế giới."
   },
   {
     id: 6,
@@ -121,117 +129,116 @@
     name: "SIBA",
     price: 22700000,
     iddm: 1,
-    description: "Siba Inu có ngoại hình dễ thương, tính cách hiền lành và rất trung thành với chủ."
   },
   {
     id: 7,
     hinh: [
       "https://toplist.vn/images/800px/meo-munchkin-1028256.jpg",
-      "https://toplist.vn/images/800px/meo-munchkin-577876.jpg"
+      "https://toplist.vn/images/800px/meo-munchkin-577876.jpg",
     ],
     name: "Mèo Munchkin",
     price: 2700000,
     iddm: 2,
-    description: "Mèo Munchkin nổi bật với đôi chân ngắn, ngoại hình nhỏ gọn và tính cách dễ thương."
   },
   {
     id: 8,
     hinh: [
       "https://toplist.vn/images/800px/meo-exotic-1028263.jpg",
-      "https://toplist.vn/images/800px/meo-exotic-577884.jpg"
+      "https://toplist.vn/images/800px/meo-exotic-577884.jpg",
     ],
     name: "Mèo Exotic",
     price: 2700000,
     iddm: 2,
-    description: "Mèo Exotic có ngoại hình đặc trưng với khuôn mặt tròn, mũi ngắn và bộ lông mượt mà."
   },
   {
     id: 9,
     hinh: [
       "https://toplist.vn/images/800px/meo-bengal-577877.jpg",
-      "https://toplist.vn/images/800px/meo-bengal-577878.jpg"
+      "https://toplist.vn/images/800px/meo-bengal-577878.jpg",
     ],
     name: "Mèo Bengal",
     price: 2700000,
     iddm: 2,
-    description: "Mèo Bengal nổi bật với bộ lông vằn giống như báo, rất năng động và thông minh."
   },
   {
     id: 10,
     hinh: [
       "https://toplist.vn/images/800px/meo-somali-1028247.jpg",
-      "https://toplist.vn/images/800px/meo-somali-1028249.jpg"
+      "https://toplist.vn/images/800px/meo-somali-1028249.jpg",
     ],
     name: "Mèo Somali",
     price: 2700000,
     iddm: 2,
-    description: "Mèo Somali có ngoại hình đẹp, tính cách hiền lành và rất thân thiện với con người."
   },
   {
     id: 11,
     hinh: [
       "https://toplist.vn/images/800px/meo-ragdoll-12020.jpg",
-      "https://toplist.vn/images/800px/meo-ragdoll-577879.jpg"
+      "https://toplist.vn/images/800px/meo-ragdoll-577879.jpg",
     ],
     name: "Mèo Ragdoll",
     price: 2700000,
     iddm: 2,
-    description: "Mèo Ragdoll là giống mèo lớn, có tính cách hiền lành và rất thân thiện với con người."
   },
   {
-    id: 12,
+    id: 11,
     hinh: [
       "https://toplist.vn/images/800px/meo-siamese-1028235.jpg",
-      "https://toplist.vn/images/800px/meo-siamese-577885.jpg"
+      "https://toplist.vn/images/800px/meo-siamese-577885.jpg",
     ],
     name: "Mèo Siamese",
     price: 2700000,
     iddm: 2,
-    description: "Mèo Siamese nổi bật với đôi mắt xanh và bộ lông mượt mà, rất thân thiện và thông minh."
   },
   {
-    id: 13,
+    id: 12,
     hinh: [
       "https://lolipet.net/wp-content/uploads/teddy-2.jpg",
-      "https://i.ytimg.com/vi/HbIfNDecKTQ/maxresdefault.jpg"
+      "https://i.ytimg.com/vi/HbIfNDecKTQ/maxresdefault.jpg",
     ],
     name: "Chuột Lang Teddy",
     price: 2700000,
     iddm: 3,
-    description: "Chuột Lang Teddy có ngoại hình dễ thương, bộ lông dày và mềm mại, rất dễ nuôi."
   },
   {
-    id: 14,
+    id: 13,
     hinh: [
       "https://toigingiuvedep.vn/wp-content/uploads/2021/10/hinh-anh-chuot-hamster-xinh-xan.jpg",
-      "https://freenice.net/wp-content/uploads/2021/10/Hinh-anh-chuot-Hamster.jpg"
+      "https://freenice.net/wp-content/uploads/2021/10/Hinh-anh-chuot-Hamster.jpg",
     ],
     name: "Hamster Gấu",
     price: 2700000,
     iddm: 3,
-    description: "Hamster Gấu có kích thước nhỏ, tính cách hiền lành và rất dễ thương."
   },
   {
-    id: 15,
+    id: 14,
     hinh: [
       "https://th.bing.com/th/id/R.aba1cfeb4d5f9dfe20a9e336df4c393e?rik=kHaII50d3JIqVA&pid=ImgRaw&r=0https://cdn.webshopapp.com/shops/36856/files/391798175/campbelli-dwerghamster.png",
-      "https://freenice.net/wp-content/uploads/2021/10/Hinh-anh-chuot-Hamster.jpg"
+      "https://freenice.net/wp-content/uploads/2021/10/Hinh-anh-chuot-Hamster.jpg",
     ],
     name: "Hamster Campbell’s",
     price: 2700000,
     iddm: 3,
-    description: "Hamster Campbell’s có kích thước nhỏ, bộ lông mềm mại và rất dễ thương."
   },
   {
-    id: 16,
+    id: 15,
     hinh: [
       "https://th.bing.com/th/id/R.9b36e8509af102f02e83b7559f87d88a?rik=KNQy6wVO3YZiaQ&pid=ImgRaw&r=0https://th.bing.com/th/id/R.7de6e9b8edb372b79943b154521426a0?rik=E3b92F4cbjIQfQ&riu=http%3a%2f%2f1.bp.blogspot.com%2f-k_GBkmaRF48%2fUpmQtrsC4ZI%2fAAAAAAAADgg%2fOayrpxGm16g%2fs1600%2frobo%2bhamster-Roborovski-hamster-Breeding-Roborovski-hamster.jpg&ehk=XD%2fDjoIyIYaHLVx3Y%2b%2fFRa459KDYFkWObHQPz9g3DSs%3d&risl=&pid=ImgRaw&r=0https://th.bing.com/th/id/OIP.czo-BUdbmHg8mdu_bFZYRAHaEV?rs=1&pid=ImgDetMainhttps://th.bing.com/th/id/OIP.B74x9b-f0T9BeckW4a7kjwHaE8?rs=1&pid=ImgDetMainhttps://pikapet.net/wp-content/uploads/2019/11/zSlV5u9l.jpg",
-      "https://mew.vn/wp-content/uploads/2021/03/chuot-hamster-robo-1-300x300.jpg"
+      "https://mew.vn/wp-content/uploads/2021/03/chuot-hamster-robo-1-300x300.jpg",
     ],
     name: "Hamster Robo",
     price: 2700000,
     iddm: 3,
-    description: "Hamster Robo là giống chuột nhỏ nhất trong các loại hamster, rất năng động và dễ thương."
+  },
+  {
+    id: 16,
+    hinh: [
+      "https://pettot.com/wp-content/uploads/2022/08/tho-su-tu-Pettot-1.jpg",
+      "https://pettot.com/wp-content/uploads/2022/08/tho-su-tu-Pettot-1.jpg",
+    ],
+    name: "Thỏ sư tử màu đẹp giá tốt",
+    price: 2700000,
+    iddm: 4,
   },
   {
     id: 17,
@@ -242,7 +249,6 @@
     name: "Thỏ Hà Lan lùn trắng đẹp",
     price: 2700000,
     iddm: 4,
-    description: "Thỏ Hà Lan lùn trắng đẹp có bộ lông trắng mượt mà và tính cách hiền lành, là lựa chọn hoàn hảo cho người yêu thú cưng."
   },
   {
     id: 18,
@@ -253,7 +259,6 @@
     name: "Thỏ sư tử màu vàng nhạt đẹp",
     price: 2700000,
     iddm: 4,
-    description: "Thỏ sư tử màu vàng nhạt đẹp có bộ lông xù đặc trưng, rất dễ thương và là lựa chọn tốt cho gia đình có trẻ nhỏ."
   },
   {
     id: 19,
@@ -261,10 +266,9 @@
       "https://pettot.com/wp-content/uploads/2022/07/anh-tho-canh-ha-lan-lun-mau-trang-tai-sieu-ngan-tai-ha-noi.jpg",
       "https://pettot.com/wp-content/uploads/2022/07/tho-ha-lan-lun-mau-trang-sieu-dep-gia-re-tai-ha-noi.jpg",
     ],
-    name: "Thỏ Hà Lan lùn màu trắng",
+    name: "Thỏ Hà Lan lùn màu trắng ",
     price: 2700000,
     iddm: 4,
-    description: "Thỏ Hà Lan lùn màu trắng có ngoại hình nhỏ gọn và đáng yêu, là bạn đồng hành tuyệt vời cho những người yêu thú cưng."
   },
   {
     id: 20,
@@ -275,7 +279,6 @@
     name: "Thỏ Hà lan lùn màu vàng xám nhạt",
     price: 2700000,
     iddm: 4,
-    description: "Thỏ Hà Lan lùn màu vàng xám nhạt có bộ lông màu sắc độc đáo và tính cách thân thiện, phù hợp cho mọi gia đình."
   },
   {
     id: 21,
@@ -286,7 +289,6 @@
     name: "Chuông Dạy Chó Mèo",
     price: 2700000,
     iddm: 5,
-    description: "Chuông dạy chó mèo giúp bạn dễ dàng huấn luyện thú cưng của mình với âm thanh dễ nhận biết."
   },
   {
     id: 22,
@@ -297,7 +299,6 @@
     name: "Bóng Chuông 7 Màu",
     price: 2700000,
     iddm: 5,
-    description: "Bóng chuông 7 màu là món đồ chơi lý tưởng giúp thú cưng của bạn vận động và giải trí."
   },
   {
     id: 23,
@@ -308,7 +309,6 @@
     name: "Đồ Chơi Vải Cho Chó, Mèo",
     price: 2700000,
     iddm: 5,
-    description: "Đồ chơi vải cho chó, mèo giúp thú cưng của bạn giảm căng thẳng và tăng cường sự vui vẻ."
   },
   {
     id: 24,
@@ -319,7 +319,6 @@
     name: "Chuột Điều Khiển",
     price: 2700000,
     iddm: 5,
-    description: "Chuột điều khiển từ xa là món đồ chơi thú vị, giúp thú cưng của bạn thêm phần năng động."
   },
   {
     id: 25,
@@ -330,7 +329,6 @@
     name: "Bóng Đồ Chơi",
     price: 2700000,
     iddm: 5,
-    description: "Bóng đồ chơi giúp thú cưng của bạn vận động và vui chơi một cách thoải mái."
   },
   {
     id: 26,
@@ -341,7 +339,6 @@
     name: "ROYAL CANIN Mini Puppy",
     price: 2700000,
     iddm: 6,
-    description: "ROYAL CANIN Mini Puppy là thực phẩm dinh dưỡng cao cấp dành cho chó con, hỗ trợ sự phát triển toàn diện."
   },
   {
     id: 27,
@@ -352,7 +349,6 @@
     name: "ROYAL CANIN Maxi Puppy",
     price: 2700000,
     iddm: 6,
-    description: "ROYAL CANIN Maxi Puppy cung cấp dinh dưỡng tối ưu cho chó con, giúp chúng phát triển khỏe mạnh."
   },
   {
     id: 28,
@@ -363,7 +359,6 @@
     name: "ROYAL CANIN Mini Starter <br> Mother & Babydog",
     price: 2700000,
     iddm: 6,
-    description: "Thức ăn dành cho chó mẹ và chó con cỡ nhỏ Royal Canin Mini Starter Mother & Babydog."
   },
   {
     id: 29,
@@ -374,7 +369,6 @@
     name: "Pate cho mèo vị cá ngừ lát",
     price: 2700000,
     iddm: 6,
-    description: "Pate dành cho mèo với hương vị cá ngừ lát từ Iris Delicacy."
   },
   {
     id: 30,
@@ -385,7 +379,6 @@
     name: "Khay vệ sinh cho chó",
     price: 2700000,
     iddm: 7,
-    description: "Khay vệ sinh dành cho chó với thiết kế nhỏ gọn và chất liệu nhựa cao cấp."
   },
   {
     id: 31,
@@ -396,7 +389,6 @@
     name: "Xeng vệ sinh cho chó",
     price: 2700000,
     iddm: 7,
-    description: "Xeng vệ sinh dành cho chó với chất liệu nhựa cao cấp từ Soleil."
   },
   {
     id: 32,
@@ -407,7 +399,6 @@
     name: "Khay vệ sinh cho chó thành cao",
     price: 2700000,
     iddm: 7,
-    description: "Khay vệ sinh thành cao dành cho chó từ thương hiệu Sawyer."
   },
   {
     id: 33,
@@ -418,37 +409,49 @@
     name: "MAKAR Dog Toilet Trays Large",
     price: 2700000,
     iddm: 7,
-    description: "Khay vệ sinh cỡ lớn dành cho chó từ thương hiệu MAKAR."
   },
-      ];
+];
 
-      function getProductById(id) {
-        return sanpham.find(function (product) {
-          return product.id === id;
-        });
-      }
 
-      function hienhinh() {
-        var params = new URLSearchParams(window.location.search);
-        var productId = parseInt(params.get("id"), 10);
-        var product = getProductById(productId);
-
-        if (product) {
-          document.getElementById("productImage").src = product.hinh[0];
-          document.getElementById("productName").textContent = product.name;
-          document.getElementById("productPrice").textContent =
-            product.price.toLocaleString("vi-VN", {
-              style: "currency",
-              currency: "VND",
-            });
-          document.getElementById("productmt").textContent=product.description;
-        } else {
-          document.querySelector(".product-detail").textContent =
-            "Sản phẩm không tồn tại.";
-        }
-      }
-
-      hienhinh();
-    </script>
-  </body>
+const loadfull = (idPosition, lsp) => {
+  const productList = document.getElementById(idPosition);
+  let count = 0;
+  productList.innerHTML += `
+  <div class="tieude">
+  <h2>${danhmuc[lsp - 1].name}</h2>
+  <a href="#">Xem Thêm</a>
+   </div`;
+  for (let i = 0; i < sanpham.length; i++) {
+    if (sanpham[i].iddm === lsp) {
+    productList.innerHTML += `
+                <div class="sanpham_item">
+                <a href="product-detail.html?id=${sanpham[i].id}">
+                  <img src="${sanpham[i].hinh[0]}" alt="${
+      sanpham[i].name
+    }" onmouseover="doianh(this, ${i}, 1)" onmouseout="doianh(this, ${i}, 0)">
+                  <h2>${sanpham[i].name}</h2>
+                  <p class="price">${sanpham[i].price.toLocaleString("vi-VN", {
+                    style: "currency",
+                    currency: "VND",
+                  })}</p>
+                   </a>
+                </div>
+              `;
+    count++;
+  }
+}
+};
+loadfull("11", 1);
+loadfull("22", 2);
+loadfull("33", 3);
+loadfull("44", 4);
+loadfull("55", 5);
+loadfull("66", 6);
+loadfull("77", 7);
+const doianh = (imgElement, index, state) => {
+  imgElement.src = sanpham[index].hinh[state];
+};
+        </script>
+        
+</body>
 </html>

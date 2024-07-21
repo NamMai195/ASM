@@ -28,16 +28,54 @@ nav ul {
   gap: 20px;
 }
 nav ul li {
-  display: inline;
+  display: inline-block;
+  position: relative;
 }
 nav ul li a:hover {
   font-size: larger;
   color: rebeccapurple;
 }
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
 nav ul li a {
   text-decoration: none;
-  color: #333;
-  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
+  color: black;
+}
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 0;
+}
+
+nav ul li ul li {
+  display: block;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li a {
+  padding: 10px 15px;
+  color: black;
+}
+
+nav ul li ul li a:hover {
+  background-color: #eee;
 }
 .search {
   display: flex;
