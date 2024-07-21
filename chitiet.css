@@ -1,0 +1,29 @@
+.product-detail {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+.product-detail img {
+  width: 50%;
+  float: left;
+  margin-left: 100px;
+}
+
+/* .price {
+  width: 150px;
+  height: 30px;
+  background-color: green;
+  padding-top: 10px;
+  display: inline;
+  margin-right: 10px;
+} */
+.product-detail button {
+  height: 30px;
+  min-width: 100px;
+}
+.product-detail p {
+  font-size: large;
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
+}
