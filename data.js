@@ -373,3 +373,34 @@ loadProducts("4", 4, 4);
 loadProducts("5", 5, 5);
 loadProducts("6", 6, 5);
 loadProducts("7", 7, 5);
+function sanphammoi(idPosition, sl) {
+  const productList = document.getElementById(idPosition);
+  let count = 0;
+  productList.innerHTML += `
+  <div class="tieude">
+  <h2>SẢN PHẨM MỚI</h2>
+  <a href="./tatcasp.html">Xem Thêm</a>
+   </div`;
+  for (let i = sanpham.length - 1; i >= 0; i--) {
+    if (count >= sl) break;
+    productList.innerHTML += `
+                  <div class="sanpham_item">
+                  <a href="product-detail.html?id=${sanpham[i].id}">
+                    <img src="${sanpham[i].hinh[0]}" alt="${
+      sanpham[i].name
+    }" onmouseover="doianh(this, ${i}, 1)" onmouseout="doianh(this, ${i}, 0)">
+                    <h2>${sanpham[i].name}</h2>
+                    <p class="price">${sanpham[i].price.toLocaleString(
+                      "vi-VN",
+                      {
+                        style: "currency",
+                        currency: "VND",
+                      }
+                    )}</p>
+                     </a>
+                  </div>
+                `;
+    count++;
+  }
+}
+sanphammoi("moinhat", 5);

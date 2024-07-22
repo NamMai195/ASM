@@ -17,7 +17,7 @@
             <ul>
               <li><a href="./index.html">Trang chủ</a></li>
               <li><a href="./tatcasp.html">Tất Cả Sản Phẩm</a></li>
-              <li><a href="#">Tin Tức</a></li>
+              <li><a href="./tintuc.html">Tin Tức</a></li>
               <li><a href="#">Nhóm Sản Phẩm</a>
                 <ul>
                   <li><a href="loaisp.html?id=1">CÚN CƯNG</a></li>
@@ -29,7 +29,7 @@
                   <li><a href="loaisp.html?id=7">VỆ SINH THÚ CƯNG</a></li>
                 </ul>
               </li>
-              <li><a href="#">Chi Tiết Sản Phẩm</a></li>
+              
               <li><a href="#">Liên Hệ</a>
                 <ul>
                   <li><a href="https://www.facebook.com/teennguyendang">Facebook</a></li>
@@ -421,7 +421,7 @@ const loadfull = (idPosition, lsp) => {
   productList.innerHTML += `
   <div class="tieude">
   <h2>${danhmuc[lsp - 1].name}</h2>
-  <a href="#">Xem Thêm</a>
+  <a href="loaisp.html?id=${lsp}">Xem Thêm</a>
    </div`;
   for (let i = 0; i < sanpham.length; i++) {
     if (sanpham[i].iddm === lsp) {
