@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .GioHang{
+      
+           padding: 20px;
+           margin: auto;
+        width: 1000px;
+        }
+       
+        .item-gh{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .item-gh .img img{
+            width: 60px;
+            height: 60px;
+        }
+        /* .item-gh .img,.ten,.soluong,.remote{
+            flex:1;
+        
+        } */
+    </style>
+    <script src="https://kit.fontawesome.com/46247c520a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+          <div>
+            <p>
+              <img src="./img/logo.png" alt="" class="logo" />
+              <h3>AME-YÊU THÚ CƯNG NHƯ VỢ BẠN</h3>
+            </p>
+            <nav>
+              <ul>
+                <li><a href="./index.html">Trang chủ</a></li>
+                <li><a href="./tatcasp.html">Tất Cả Sản Phẩm</a></li>
+                <li><a href="./tintuc.html">Tin Tức</a></li>
+                <li><a href="#">Nhóm Sản Phẩm</a>
+                  <ul>
+                    <li><a href="loaisp.html?id=1">CÚN CƯNG</a></li>
+                    <li><a href="loaisp.html?id=2">MÈO DỄ THƯƠNG</a></li>
+                    <li><a href="loaisp.html?id=3">CHUỘT HAMTER</a></li>
+                    <li><a href="loaisp.html?id=4">THỎ TAI TOOO</a></li>
+                    <li><a href="loaisp.html?id=5">ĐỒ CHƠI </a></li>
+                    <li><a href="loaisp.html?id=6">THỨC ĂN</a></li>
+                    <li><a href="loaisp.html?id=7">VỆ SINH THÚ CƯNG</a></li>
+                  </ul>
+                </li>
+                
+                <li><a href="#">Liên Hệ</a>
+                  <ul>
+                    <li><a href="https://www.facebook.com/teennguyendang">Facebook</a></li>
+                    <li><a href="mailto:nguyendanghighschool@gmail.com">Email</a></li>
+                    <!-- <li><a href="./Bai2/index.html" target="page">Riêng</a></li> -->
+                  </ul></li>
+                  <li><a href="#">Tài Khoản</a>
+                    <ul>
+                      <li><a href="./formdk/dn.html">Đăng Nhập</a></li>
+                      <li><a href="./formdk/dk.html">Đăng Ký</a></li>
+                      <!-- <li><a href="./Bai2/index.html" target="page">Riêng</a></li> -->
+                    </ul></li>
+              </ul>
+            </nav>
+            <div class="search">
+              <input type="text" placeholder="Nhập Tên Sản Phẩm" />
+              <button style="height: 30px">search</button>
+              <button style="height: 30px">Giỏ Hàng</button>
+  
+            </div>
+          </div>
+        </header>
+      
+        <h1>Giỏ Hàng</h1>
+        <div class="GioHang" id="GioHang"> 
+        </div>
+        <footer>
+          <div class="footer">
+            <a class="links link1">© 2024 </a>
+            <a href="tel:+123456789" class="links link2">SODT</a>
+            <a href="https://www.facebook.com/teennguyendang" class="links link3">FB</a>
+            <a href="mailto:nguyendanghighschool@gmail.com" class="links link4">EMAIL </a>
+          </div>
+        </footer>
+      </div>
+      
+      <script>
+         hienthi();
+
+function laygiohang() {
+    let giohang = [];
+    const jsongh = localStorage.getItem("cart");
+    if (jsongh !== null) {
+        giohang = JSON.parse(jsongh);
+    }
+    return giohang;
+}
+
+function hienthi() {
+    const dsitem = laygiohang();
+    const html = loaddsitem(dsitem);
+    const giohanghtml = document.getElementById("GioHang");
+    giohanghtml.innerHTML = html;
+}
+
+function loaddsitem(dsitem) {
+    let htmltong = '';
+    for (let i = 0; i < dsitem.length; i++) {
+        htmltong += tohtml(dsitem[i]);
+    }
+    return htmltong;
+}
+
+function tohtml(itemgiohang) {
+    return `
+        <div class="item-gh">
+            <div class="img">
+                <img src="${itemgiohang.hinh[0]}" alt="">
+            </div>
+            <p class="ten">${itemgiohang.name}</p>
+            <div class="gia">
+                <span>${itemgiohang.price.toLocaleString()} VNĐ</span>
+            </div>
+            <input type="number" class="soluong" value="1">
+            <p class="tongtien">${(itemgiohang.price * (itemgiohang.quantity || 1)).toLocaleString()} VNĐ</p>
+            <div class="remote">
+                <i class="fa-solid fa-trash-can" onclick="xoaItem(${itemgiohang.id})"></i>
+            </div>
+        </div>`;
+}
+function xoaItem(id) {
+            let dsitem = laygiohang();
+            dsitem = dsitem.filter(item => item.id !== id);
+            localStorage.setItem("cart", JSON.stringify(dsitem));
+            hienthi();
+        }
+        function capNhatSoLuong(id, soLuong) {
+            let dsitem = laygiohang();
+            const product = dsitem.find(item => item.id === id);
+            if (product) {
+                product.quantity = parseInt(soLuong, 10);
+                localStorage.setItem("cart", JSON.stringify(dsitem));
+                hienthi();
+            }
+        }
+        function themGioHang(product) {
+            let dsitem = laygiohang();
+            const existingProduct = dsitem.find(item => item.id === product.id);
+            if (existingProduct) {
+                existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+            } else {
+                dsitem.push({ ...product, quantity: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(dsitem));
+            alert(`${product.name} đã được thêm vào giỏ hàng!`);
+            hienthi();
+        }
+
+        function capNhatSoLuong(id, soLuong) {
+            let dsitem = laygiohang();
+            const product = dsitem.find(item => item.id === id);
+            if (product) {
+                product.quantity = parseInt(soLuong, 10);
+                localStorage.setItem("cart", JSON.stringify(dsitem));
+                hienthi();
+            }
+        }
+
+        function tinhTongTien(dsitem) {
+            let tongTien = 0;
+            for (let i = 0; i < dsitem.length; i++) {
+                tongTien += dsitem[i].price * (dsitem[i].quantity || 1);
+            }
+            document.getElementById("tongTien").innerText = `Tổng Tiền: ${tongTien.toLocaleString()} VNĐ`;
+        }
+ </script>
+</body>
+</html>

@@ -55,31 +55,54 @@
         <div class="search">
           <input type="text" placeholder="Nhập Tên Sản Phẩm" />
           <button style="height: 30px">search</button>
-          <button style="height: 30px;">TÀI KHOẢN</button>
+          <button style="height: 30px;">Giỏ Hàng</button>
         </div>
       </div>
     </header>
     <div
-      style=" width: 100%;;"
+      style=" width: 100%;"
     >
 
     <h2>Đăng Nhâp</h2>
     <div class="noidung">
-      <form action="">
+      <form onsubmit="return kiem_tra()">
         <div class="a">
           <label for="">Username</label>
-          <input type="text" />
+          <input type="text" id="name" />
         </div>
         <div class="a">
           <label for="">Password</label>
-          <input type="text" />
+          <input type="text" id="pass" />
         </div>
-        
-        <button>Đăng Nhập</button>
-        <button>NHẬP LẠI</button>
+        <input type="submit" value="Đăng Nhâp">
       </form>
-        </form>
       </div>
     </div>
+    <script>
+      function kiem_tra() {
+        function isEmpty(element) {
+          return element.value.trim() === "";
+        }
+
+        var name = document.getElementById("name");
+        var pass = document.getElementById("pass");
+
+        if (isEmpty(name)) {
+          alert("Vui lòng nhập tên");
+          name.focus();
+          return false;
+        }
+
+
+        else if (isEmpty(pass)) {
+          alert("Vui lòng nhập pass");
+          name.focus();
+          return false;
+        }
+        else{
+          alert("Đăng Nhập Thành Công");
+        }
+      };
+    </script>
   </body>
 </html>

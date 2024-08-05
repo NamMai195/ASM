@@ -50,6 +50,8 @@
           <div class="search">
             <input type="text" placeholder="Nhập Tên Sản Phẩm" />
             <button style="height: 30px">search</button>
+            <button style="height: 30px">Giỏ Hàng</button>
+
           </div>
         </div>
       </header>
@@ -61,8 +63,9 @@
           <br> <br> <br>
           <p id="productPrice" class="price"></p> 
           <br> <br> <br>
-           <button>THÊM VÀO VỎ HÀNG</button> 
-           <button>MUA</button>
+          
+           <button onclick="themgiohang()">THÊM VÀO VỎ HÀNG</button> 
+           <a href="./giohang.html">MUA</a>
           <br> <br> <br> <br>
           <p id="productmt"></p>
         </div>
@@ -433,11 +436,14 @@
         });
       }
 
+      var mua=document.getElementById("mua");
+      var them=document.getElementById("them");
+
       function hienhinh() {
         var params = new URLSearchParams(window.location.search);
         var productId = parseInt(params.get("id"), 10);
         var product = getProductById(productId);
-
+       
         if (product) {
           document.getElementById("productImage").src = product.hinh[0];
           document.getElementById("productName").textContent = product.name;
@@ -454,6 +460,16 @@
       }
 
       hienhinh();
+      function themgiohang() {
+        let params = new URLSearchParams(window.location.search);
+        let productId = parseInt(params.get("id"), 10);
+        let product = getProductById(productId);
+        
+    let cart = JSON.parse(localStorage.getItem("cart")) || []; // Lấy giỏ hàng hoặc khởi tạo mảng mới
+    cart.push(product); // Thêm sản phẩm vào giỏ hàng
+    localStorage.setItem("cart", JSON.stringify(cart)); // Lưu lại giỏ hàng
+    alert(`${product.name} đã được thêm vào giỏ hàng!`);
+}
     </script>
   </body>
 </html>

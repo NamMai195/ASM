@@ -47,7 +47,7 @@
         <div class="search">
           <input type="text" placeholder="Nhập Tên Sản Phẩm" />
           <button style="height: 30px">search</button>
-          <button style="height: 30px;">TÀI KHOẢN</button>
+          <button style="height: 30px;">Giỏ Hàng</button>
         </div>
       </div>
     </header>
@@ -56,37 +56,62 @@
     >
     <h2>ĐĂNG KÝ</h2>
     <div class="noidung">
-      <form action="" >
+      <form onsubmit="return kiem_tra()" >
         <div class="a">
           <label for="">Username</label>
-          <input type="text" />
+          <input type="text" id="username"/>
         </div>
         <div class="a">
           <label for="">Password</label>
-          <input type="text" />
+          <input type="text" id="pass"/>
         </div>
         <div class="a">
           <label for="">Fullname</label>
-          <input type="text" placeholder="Nhập Họ Tên" />
+          <input type="text" placeholder="Nhập Họ Tên" id="fullname"/>
         </div>
         <div class="a">
           <label for="">Birthday</label>
-          <input type="date" />
+          <input type="date" id="sn"/>
         </div>
-        <div>
-          <label for="">Photo</label> <br />
-          <input type="file" />
-        </div>
-        <fieldset>
-          <legend>Gender</legend>
-          <label><input type="radio" name="gt" />Male</label>
-          <label><input type="radio" name="gt" />Female</label>
-        </fieldset>
-        <button>ĐĂNG KÝ</button>
-        <button>NHẬP LẠI</button>
+       <input type="submit" value="Đăng Ký">
+       
       </form>
-        </form>
       </div>
     </div>
+    <script>
+      function kiem_tra(){
+        function isEmpty(element) {
+          return element.value.trim() === "";
+        }
+        var name=document.getElementById("username");
+        var pass=document.getElementById("pass");
+        var fullname=document.getElementById("fullname");
+        var sn=document.getElementById("sn");
+        if(isEmpty(name)){
+          alert("Vui lòng nhập tên");
+          name.focus();
+          return false;
+        }
+        else if(isEmpty(pass)){
+          alert("vui Lòng Nhập pass");
+          pass.focus;
+          return false;
+        }
+        else if(isEmpty(fullname)){
+          alert("Vui Lòng nhập Full Name");
+          fullname.focus
+          return false;
+        }
+        else if(isEmpty(sn)){
+          alert("vui lòng nhập ngày sinh");
+          sn.focus;
+          return false;
+        }
+        else{
+          alert("Đăng Kí Thành Công");
+          return true;
+        }
+      }
+    </script>
   </body>
 </html>
